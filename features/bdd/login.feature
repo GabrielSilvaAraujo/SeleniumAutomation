@@ -1,7 +1,7 @@
 Feature: login 
 For being able to access logged in functions 
 The User with a created account
-Wants to log into the site
+Wants to log into the website
 
 
 
