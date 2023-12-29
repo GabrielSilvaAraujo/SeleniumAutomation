@@ -1,4 +1,4 @@
-Dir[File.join(File.dirname(__FILE__), '~\..\Symphony\features\pages*.page.rb')].each { |file| require file }
+Dir[File.join(File.dirname(__FILE__), 'features\pages*.pages.rb')].each { |file| require file }
 
 module Page
 
