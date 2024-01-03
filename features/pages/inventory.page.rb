@@ -6,6 +6,8 @@ class InventoryPage < SitePrism::Page
     element :inventoryList, "#inventory_container > div > div:nth-child(1) > div.inventory_item_img"
     element :firstItem, "#inventory_container > div > div:first-child > div.inventory_item_description"
     element :lastItem, "#inventory_container > div > div:last-child > div.inventory_item_description"
+    element :mainMenu, :id, "react-burger-menu-btn"
+    element :logoutButton, :id, "logout_sidebar_link" 
     
 
     def checkLoginSuccessful
@@ -29,4 +31,10 @@ class InventoryPage < SitePrism::Page
     def checkZtoAsorted
         expect(lastItem).to have_text('Sauce Labs Backpack')
     end
+
+    def logout
+        mainMenu.click
+        logoutButton.click
+    end
+    
 end
