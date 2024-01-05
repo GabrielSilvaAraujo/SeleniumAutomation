@@ -9,7 +9,6 @@ Given the user has a registred account
 When they insert valid credentials 
 Then they will access the products screen
 
-
 Scenario: wrong password
 Given the user has a registred account
 When they insert a valid login with the wrong password

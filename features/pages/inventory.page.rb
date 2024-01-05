@@ -8,6 +8,9 @@ class InventoryPage < SitePrism::Page
     element :lastItem, "#inventory_container > div > div:last-child > div.inventory_item_description"
     element :mainMenu, :id, "react-burger-menu-btn"
     element :logoutButton, :id, "logout_sidebar_link" 
+    element :add, :id, "add-to-cart-sauce-labs-backpack"
+    element :cartBadge, "#shopping_cart_container > a"
+    
     
 
     def checkLoginSuccessful
@@ -36,5 +39,17 @@ class InventoryPage < SitePrism::Page
         mainMenu.click
         logoutButton.click
     end
+
+    def addToCart
+        add.click
+    end
+
+    def checkBadge
+        expect(cartBadge).to have_text('1')
+    end
+        
+    def accessCart
+        cartBadge.click
+    end   
     
 end

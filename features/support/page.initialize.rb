@@ -10,4 +10,12 @@ module Page
     @inventory ||= InventoryPage.new
   end
 
+  def cart
+    @cart ||= CartPage.new
+  end
+
+  def checkoutStepOne
+   @checkoutStepOne ||= CheckoutStepOnePage.new
+  end
+
 end
