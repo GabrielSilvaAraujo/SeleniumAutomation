@@ -25,4 +25,8 @@ class LoginPage < SitePrism::Page
         expect(userField).to be_visible
     end
 
+    def completeLogin
+        load
+        userLogin(CREDENTIAL[:user][:login], CREDENTIAL[:user][:password])
+    end
 end

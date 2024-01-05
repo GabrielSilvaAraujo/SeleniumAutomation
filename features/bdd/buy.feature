@@ -14,4 +14,8 @@ Given The user has added a product to cart
 When they click on the "Checkout" button
 Then they will access the "Checkout: Your information" screen
 
-
+Scenario: Complete purchase
+Given the user has filled in the checkout information
+And the user has pressed the "Continue" button
+When The user presses the "Finish" button
+Then the text "Thank you for your order!" should be visible

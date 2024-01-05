@@ -29,5 +29,11 @@ CREDENTIAL = {
     visual_user: {
         login: 'visual_user',
         password: 'secret_sauce'
-    }, 
+    },
+    
+    creditInformation: {
+        firstName: 'John',
+        lastName: 'Doe',
+        zipCode: '12332112'
+    },
 }

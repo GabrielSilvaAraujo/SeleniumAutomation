@@ -7,9 +7,7 @@ Then('they will see "1" on the shopping cart badge') do
 end
 
 Given('The user has added a product to cart') do
-    login.load
-    login.userLogin(CREDENTIAL[:user][:login], CREDENTIAL[:user][:password])
-    inventory.addToCart
+    login.completeLogin
     inventory.accessCart
 end
   
@@ -19,5 +17,23 @@ end
   
 Then('they will access the "Checkout: Your information" screen') do 
     checkoutStepOne.checkTitle
-    sleep 1
+end
+
+Given ('the user has filled in the checkout information') do
+    login.completeLogin
+    inventory.accessCart
+    cart.clickCheckout
+    checkoutStepOne.fillInformation
+end
+
+Given ('the user has pressed the "Continue" button') do
+    checkoutStepOne.clickContinue
+end
+
+When ('The user presses the "Finish" button') do
+    checkoutStepTwo.clickFinish
+end
+
+Then ('the text "Thank you for your order!" should be visible') do
+    checkoutComplete.checkResult
 end

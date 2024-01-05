@@ -18,4 +18,12 @@ module Page
    @checkoutStepOne ||= CheckoutStepOnePage.new
   end
 
+  def checkoutStepTwo
+    @checkoutStepTwo ||= CheckoutStepTwoPage.new
+  end
+
+  def checkoutComplete
+    @checkoutComplete ||= CheckoutComplete.new
+  end
+
 end

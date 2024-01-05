@@ -49,6 +49,7 @@ class InventoryPage < SitePrism::Page
     end
         
     def accessCart
+        addToCart
         cartBadge.click
     end   
     
